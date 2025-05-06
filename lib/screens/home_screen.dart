@@ -2,7 +2,9 @@ import 'package:auth_pages/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final String userIdentifier;
+
+  const HomePage({Key? key, required this.userIdentifier}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class HomePage extends StatelessWidget {
             const Padding(padding: const EdgeInsets.only(top: 200)),
             SizedBox(height: 200),
             Text(
-              'You are logged in!',
+              'Hello, $userIdentifier!',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
