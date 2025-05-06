@@ -157,7 +157,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             color: Colors.grey,
                           ),
                           label: Text(
-                            'Conform Password',
+                            'Confirm Password',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Color(0xffB81736),
