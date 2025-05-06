@@ -1,3 +1,5 @@
+import 'package:auth_pages/screens/home_screen.dart';
+import 'package:auth_pages/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -85,42 +87,76 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 70),
-                    Container(
-                      height: 55,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        gradient: const LinearGradient(
-                          colors: [Color(0xff881736), Color(0xff281537)],
+                    GestureDetector(
+                      onTap: () {
+                        // Handle sign-in action
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
+                      },
+                      child: Container(
+                        height: 55,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xff881736), Color(0xff281537)],
+                          ),
                         ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Sign In',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                        child: const Center(
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(height: 150),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: Column(
-                        children: [
-                          Text(
-                            "Don't have an account?",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Colors.black,
-                            ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "Don't have an account?",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  // Handle sign-up action
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => RegisterScreen(),
+                                    ),
+                                  );
+                                },
+                                child: const Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          Text('Sign Up'),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
